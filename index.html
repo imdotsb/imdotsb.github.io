@@ -759,31 +759,30 @@
                     <div class="light-card p-6 flex flex-col justify-between h-64 sm:col-span-2">
                         <div>
                             <div class="flex justify-between items-start">
-                                <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-mastodon mr-3 text-sky-500"></i>Mastodon</h2>
-                                <span id="mastodon-status" class="flex items-center text-xs font-medium px-2 py-1 rounded-full">
+                                <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-mastodon mr-3 text-sky-500"></i> im.sb Mastodon</h2>
+                                <a href="https://imsb.app" target="_blank" id="mastodon-status" class="flex items-center text-xs font-medium px-2 py-1 rounded-full">
                                     <span class="w-2 h-2 mr-2 rounded-full"></span>
-                                    <span>Loading...</span>
-                                </span>
+                                    <span class="mr-2">Loading...</span>
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
                             </div>
                             <p class="mt-2 text-sm text-slate-500" id="mastodon-desc">A mastodon instance hosted by im.sb</p>
-                            <div class="mt-4 grid grid-cols-3 gap-4 text-sm text-center">
-                                <div>
-                                    <p class="font-semibold text-slate-700" id="mastodon-users">--</p>
-                                    <p class="text-slate-500">Users</p>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-slate-700" id="mastodon-posts">--</p>
-                                    <p class="text-slate-500">Posts</p>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-slate-700" id="mastodon-active">--</p>
-                                    <p class="text-slate-500">Active/Month</p>
-                                </div>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-sm text-center">
+                            <div class="card-link py-2.5 rounded-lg">
+                                <p class="font-semibold text-slate-700" id="mastodon-users">--</p>
+                                <p class="text-slate-500">Users</p>
+                            </div>
+                            <div class="card-link py-2.5 rounded-lg">
+                                <p class="font-semibold text-slate-700" id="mastodon-posts">--</p>
+                                <p class="text-slate-500">Posts</p>
+                            </div>
+                            <div class="card-link py-2.5 rounded-lg">
+                                <p class="font-semibold text-slate-700" id="mastodon-active">--</p>
+                                <p class="text-slate-500">Active/Month</p>
                             </div>
                         </div>
-                        <a href="https://imsb.app" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                            imsb.app <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                        </a>
                     </div>
 
                     <!-- 天气 卡片 (炫酷版) -->
@@ -882,7 +881,7 @@
                         <div>
                             <div class="flex justify-between items-center">
                                 <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-person-fill mr-3 text-sky-500"></i>Latest From Blog</h2>
-                                <a href="https://yjk.im.sb" target="_blank" class="text-sm text-sky-600 hover:text-sky-800 font-medium">Visit Blog <i class="bi bi-arrow-right-short"></i></a>
+                                <a href="https://yjk.im.sb" target="_blank" class="text-sm text-sky-600 hover:text-sky-800 font-medium">Visit Blog <i class="bi bi-box-arrow-up-right"></i></a>
                             </div>
                             <div class="mt-4 space-y-3" id="blog-posts-list">
                                 <p class="text-sm text-slate-500">Loading latest posts...</p>
@@ -937,7 +936,7 @@
                     }
 
                     const statusIndicator = statusEl.querySelector('span:first-child');
-                    const statusText = statusEl.querySelector('span:last-child');
+                    const statusText = statusEl.querySelector('span:nth-child(2)');
                     if (data.openRegistrations) {
                         statusEl.classList.add('bg-green-100', 'text-green-800');
                         statusIndicator.classList.add('bg-green-500');
