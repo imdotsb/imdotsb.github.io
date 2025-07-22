@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://use.sevencdn.com">
     <title>im.sb - Projects</title>
     <link rel="icon" href="/favicon.ico" />
-
+    
     <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://use.sevencdn.com">
     <link href="https://use.sevencdn.com/css2?family=Inter:wght@300;400;500;600;700" rel="stylesheet">
-
+    
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://use.sevencdn.com/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
-        /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -36,7 +36,6 @@
     --color-sky-800: oklch(44.3% 0.11 240.79);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --color-slate-100: oklch(96.8% 0.007 247.896);
-    --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-slate-500: oklch(55.4% 0.046 257.417);
     --color-slate-700: oklch(37.2% 0.044 257.287);
@@ -45,9 +44,6 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --breakpoint-xl: 80rem;
-    --container-xl: 36rem;
-    --container-2xl: 42rem;
-    --container-5xl: 64rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -249,20 +245,14 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
   .mr-3 {
     margin-right: calc(var(--spacing) * 3);
-  }
-  .mb-12 {
-    margin-bottom: calc(var(--spacing) * 12);
-  }
-  .mb-16 {
-    margin-bottom: calc(var(--spacing) * 16);
   }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
@@ -282,26 +272,17 @@
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
+  .h-auto {
+    height: auto;
+  }
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
   .w-full {
     width: 100%;
   }
-  .max-w-2xl {
-    max-width: var(--container-2xl);
-  }
-  .max-w-5xl {
-    max-width: var(--container-5xl);
-  }
   .max-w-screen-xl {
     max-width: var(--breakpoint-xl);
-  }
-  .max-w-xl {
-    max-width: var(--container-xl);
-  }
-  .cursor-pointer {
-    cursor: pointer;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -354,18 +335,11 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .border-r {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
   .border-sky-500\/50 {
     border-color: color-mix(in srgb, oklch(68.5% 0.169 237.323) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-sky-500) 50%, transparent);
     }
-  }
-  .border-slate-200 {
-    border-color: var(--color-slate-200);
   }
   .bg-green-100 {
     background-color: var(--color-green-100);
@@ -378,12 +352,6 @@
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
-  }
-  .bg-transparent {
-    background-color: transparent;
-  }
-  .bg-white {
-    background-color: var(--color-white);
   }
   .bg-cover {
     background-size: cover;
@@ -412,17 +380,14 @@
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
   }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
-  }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
-  .pl-4 {
-    padding-left: calc(var(--spacing) * 4);
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
   .text-right {
     text-align: right;
@@ -572,13 +537,6 @@
       }
     }
   }
-  .hover\:text-sky-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-500);
-      }
-    }
-  }
   .hover\:text-sky-800 {
     &:hover {
       @media (hover: hover) {
@@ -593,25 +551,9 @@
       }
     }
   }
-  .focus\:outline-none {
-    &:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-  }
   .sm\:col-span-2 {
     @media (width >= 40rem) {
       grid-column: span 2 / span 2;
-    }
-  }
-  .sm\:mt-20 {
-    @media (width >= 40rem) {
-      margin-top: calc(var(--spacing) * 20);
-    }
-  }
-  .sm\:mb-20 {
-    @media (width >= 40rem) {
-      margin-bottom: calc(var(--spacing) * 20);
     }
   }
   .sm\:grid-cols-2 {
@@ -624,29 +566,59 @@
       padding-inline: calc(var(--spacing) * 6);
     }
   }
-  .md\:py-20 {
+  .md\:sticky {
     @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 20);
+      position: sticky;
     }
   }
-  .lg\:col-span-2 {
-    @media (width >= 64rem) {
-      grid-column: span 2 / span 2;
+  .md\:top-0 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 0);
     }
   }
-  .lg\:mt-24 {
-    @media (width >= 64rem) {
-      margin-top: calc(var(--spacing) * 24);
+  .md\:col-span-4 {
+    @media (width >= 48rem) {
+      grid-column: span 4 / span 4;
     }
   }
-  .lg\:mb-24 {
-    @media (width >= 64rem) {
-      margin-bottom: calc(var(--spacing) * 24);
+  .md\:col-span-8 {
+    @media (width >= 48rem) {
+      grid-column: span 8 / span 8;
     }
   }
-  .lg\:grid-cols-3 {
+  .md\:grid-cols-12 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+  .md\:gap-8 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:self-start {
+    @media (width >= 48rem) {
+      align-self: flex-start;
+    }
+  }
+  .md\:py-16 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+  .lg\:col-span-3 {
     @media (width >= 64rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-column: span 3 / span 3;
+    }
+  }
+  .lg\:col-span-9 {
+    @media (width >= 64rem) {
+      grid-column: span 9 / span 9;
+    }
+  }
+  .lg\:gap-12 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 12);
     }
   }
   .lg\:px-8 {
@@ -665,16 +637,16 @@
       line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
+  .xl\:grid-cols-3 {
+    @media (width >= 80rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
 }
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -692,7 +664,6 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-space-y-reverse: 0;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-duration: initial;
@@ -700,14 +671,14 @@
   }
 }
 
-        /* Custom Styles */
+        /* 自定义样式 */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-            color: #334155; /* slate-700 */
+            background-color: #f8fafc; /* 亮色背景 (slate-50) */
+            color: #334155; /* 主要文字颜色 (slate-700) */
         }
 
-        /* Card Styles */
+        /* 卡片样式 */
         .light-card {
             background-color: white;
             border: 1px solid #e5e7eb; /* slate-200 */
@@ -722,7 +693,7 @@
             border-color: #d1d5db; /* slate-300 */
         }
 
-        /* Custom Link Button Styles */
+        /* 自定义链接按钮样式 */
         .card-link {
             background-color: #f1f5f9; /* slate-100 */
             color: #475569; /* slate-600 */
@@ -734,7 +705,7 @@
             color: #1e293b; /* slate-800 */
         }
 
-        /* Dynamic Weather Card Background */
+        /* 天气卡片动态背景 */
         .weather-card-base {
             background: linear-gradient(135deg, #6a85b6 0%, #bac8e0 100%);
             color: white;
@@ -750,7 +721,7 @@
         .weather-bg-lei { background: linear-gradient(135deg, #1F1C2C 0%, #928DAB 100%); }
         .weather-bg-wu, .weather-bg-shachen, .weather-bg-bingbao { background: linear-gradient(135deg, #757f9a 0%, #d7dde8 100%); }
 
-        /* Poisonous Chicken Soup Card Style */
+        /* 毒鸡汤卡片样式 */
         .soup-card-base {
             background: linear-gradient(135deg, #434343 0%, #000000 100%);
             color: white;
@@ -758,226 +729,185 @@
         #badsoup {
             transition: opacity 0.3s ease-in-out;
         }
-
-        /* Search Bar Custom Styles */
-        #search-container {
-            border: 1px solid #d1d5db; /* slate-300 */
-            transition: box-shadow 0.2s ease-in-out;
-        }
-        #search-container:focus-within {
-            box-shadow: 0 0 0 2px #38bdf8; /* sky-400 */
-        }
-        #search-engine {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-            background-position: right 0.5rem center;
-            background-repeat: no-repeat;
-            background-size: 1.5em 1.5em;
-            padding-right: 2.5rem;
-        }
-        #search-input, #search-engine, #search-button {
-            border: none;
-            outline: none;
-            box-shadow: none;
-        }
-
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
-
-        <!-- Title and Introduction -->
-        <header class="text-center mb-12 mt-16 sm:mt-20 lg:mt-24">
-            <h1 class="text-4xl lg:text-5xl font-bold text-slate-800 tracking-tight">
-                <i class="bi bi-tools"></i> im.sb
-            </h1>
-            <p class="mt-4 text-lg text-slate-500 max-w-2xl mx-auto">
-                A curated collection of services and tools.
-            </p>
-        </header>
-
-        <!-- Search Bar -->
-        <section class="max-w-xl mx-auto mb-16 sm:mb-20 lg:mb-24">
-            <form id="search-form" class="w-full">
-                <div id="search-container" class="relative flex items-center w-full bg-white rounded-lg overflow-hidden">
-                    <select id="search-engine" class="pl-4 py-3 text-slate-500 bg-transparent border-r border-slate-200 focus:outline-none text-sm cursor-pointer">
-                        <option value="google">Google</option>
-                        <option value="bing">Bing</option>
-                        <option value="duckduckgo">DuckDuckGo</option>
-                    </select>
-                    <input type="search" id="search-input" placeholder="Search the web..." class="w-full py-3 px-4 text-slate-700 bg-transparent focus:outline-none">
-                    <button type="submit" id="search-button" class="px-4 text-slate-500 hover:text-sky-500 transition-colors" aria-label="Search">
-                        <i class="bi bi-search"></i>
-                    </button>
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 md:gap-8 lg:gap-12">
+            
+            <!-- 左侧固定栏 -->
+            <aside class="md:col-span-4 lg:col-span-3 md:sticky md:top-0 md:self-start py-8 md:py-16 lg:py-24">
+                <div class="text-left">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-slate-800 tracking-tight">
+                        im.sb
+                    </h1>
+                    <p class="mt-4 text-slate-500">
+                        A curated collection of services and tools.
+                    </p>
+                    <footer class="mt-12 text-sm text-slate-400">
+                        <p>&copy; <span id="year"></span> im.sb. Built with <i class="bi bi-heart-fill text-red-500/80"></i></p>
+                    </footer>
                 </div>
-            </form>
-        </section>
+            </aside>
 
-
-        <!-- Card Group -->
-        <main class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Mastodon Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64 sm:col-span-2 lg:col-span-2">
-                    <div>
-                        <div class="flex justify-between items-start">
-                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-mastodon mr-3"></i> im.sb Mastodon</h2>
-                            <a href="https://imsb.app" target="_blank" id="mastodon-status" class="flex items-center text-xs font-medium px-2 py-1 rounded-full">
-                                <span class="w-2 h-2 mr-2 rounded-full"></span>
-                                <span class="mr-2">Loading...</span>
-                                <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                        <p class="mt-2 text-sm text-slate-500" id="mastodon-desc">A mastodon instance hosted by im.sb</p>
-                    </div>
-                    <div class="mt-4 grid grid-cols-3 gap-4 text-sm text-center">
-                        <div class="card-link py-2.5 rounded-lg">
-                            <p class="font-semibold text-slate-700" id="mastodon-users">--</p>
-                            <p class="text-slate-500">Users</p>
-                        </div>
-                        <div class="card-link py-2.5 rounded-lg">
-                            <p class="font-semibold text-slate-700" id="mastodon-posts">--</p>
-                            <p class="text-slate-500">Posts</p>
-                        </div>
-                        <div class="card-link py-2.5 rounded-lg">
-                            <p class="font-semibold text-slate-700" id="mastodon-active">--</p>
-                            <p class="text-slate-500">Active/Month</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Weather Card -->
-                <div id="weather-card" class="light-card weather-card-base relative overflow-hidden p-6 flex flex-col justify-between h-64 transition-all duration-500">
-                    <div class="relative z-10 flex justify-between items-start">
+            <!-- 右侧内容区 -->
+            <main class="md:col-span-8 lg:col-span-9 py-8 md:py-16 lg:py-24">
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    
+                    <!-- Mastodon 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64 sm:col-span-2">
                         <div>
-                            <h2 class="text-xl font-bold text-white" id="weather-city">Loading...</h2>
-                            <p class="text-white/80" id="weather-desc"></p>
+                            <div class="flex justify-between items-start">
+                                <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-mastodon mr-3 text-sky-500"></i> im.sb Mastodon</h2>
+                                <a href="https://imsb.app" target="_blank" id="mastodon-status" class="flex items-center text-xs font-medium px-2 py-1 rounded-full">
+                                    <span class="w-2 h-2 mr-2 rounded-full"></span>
+                                    <span class="mr-2">Loading...</span>
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                            </div>
+                            <p class="mt-2 text-sm text-slate-500" id="mastodon-desc">A mastodon instance hosted by im.sb</p>
                         </div>
-                        <div id="weather-icon" class="text-5xl text-white/80">
-                            <i class="bi bi-cloud-sun"></i>
-                        </div>
-                    </div>
-                    <div class="relative z-10 text-right">
-                        <h1 class="text-6xl font-bold text-white" id="weather-temp">--°</h1>
-                        <p class="text-white/80" id="weather-range"></p>
-                    </div>
-                </div>
 
-                <!-- JPG Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-image-fill mr-3"></i>JPG</h2>
-                        <p class="mt-2 text-sm text-slate-500">A high-performance image hosting service.</p>
-                    </div>
-                    <a href="https://jpg.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                        jpg.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                    </a>
-                </div>
-
-                <!-- Bing Pictures Card -->
-                <div class="light-card p-6 flex flex-col justify-end h-64 sm:col-span-2 bg-cover bg-center" id="bing-card">
-                    <div class="text-white text-right font-semibold text-sm" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
-                        Bing Daily Picture
-                        <a href="https://www.7ed.net/get-api/bing.html" target="_blank" class="p-2 text-white hover:text-gray-200"><i class="bi bi-box-arrow-up-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- PDF Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-pdf-fill mr-3"></i>PDF</h2>
-                        <p class="mt-2 text-sm text-slate-500">A suite of powerful PDF online tools.</p>
-                    </div>
-                    <a href="https://pdf.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                        pdf.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                    </a>
-                </div>
-
-                <!-- Git Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-git mr-3"></i>Git</h2>
-                        <p class="mt-2 text-sm text-slate-500">Private and secure Git hosting.</p>
-                    </div>
-                    <a href="https://git.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                        git.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                    </a>
-                </div>
-
-                <!-- Check Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-shield-fill-check mr-3"></i>Check</h2>
-                        <p class="mt-2 text-sm text-slate-500">A website health check service.</p>
-                    </div>
-                    <a href="https://check.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                        check.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                    </a>
-                </div>
-
-                <!-- Memos Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-bookmark-fill mr-3"></i>Memos</h2>
-                        <p class="mt-2 text-sm text-slate-500">A lightweight notes website.</p>
-                    </div>
-                    <a href="https://memos.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                        memos.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                    </a>
-                </div>
-
-                <!-- Poisonous Chicken Soup Card -->
-                <div id="soup-card" class="light-card soup-card-base relative overflow-hidden p-6 flex flex-col justify-center items-center h-64 sm:col-span-2 transition-all duration-500 text-center">
-                    <p class="relative z-10 text-lg font-medium text-white/90 italic" id="badsoup">Loading...</p>
-                    <button id="refresh-soup" class="absolute z-20 bottom-4 right-4 text-white/50 hover:text-white transition-colors" aria-label="Refresh quote">
-                        <i class="bi bi-arrow-repeat text-xl"></i>
-                    </button>
-                    <a href="https://www.7ed.net/get-api/soup.html" target="_blank" class="absolute z-20 top-4 right-4 text-white/50 hover:text-white transition-colors text-xs" aria-label="API Source">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                    </a>
-                </div>
-
-                <!-- Blog Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64 sm:col-span-2 border-sky-500/50">
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-person-fill mr-3"></i>Latest From Blog</h2>
-                            <a href="https://yjk.im.sb" target="_blank" class="text-sm text-sky-600 hover:text-sky-800 font-medium">Visit Blog <i class="bi bi-box-arrow-up-right"></i></a>
-                        </div>
-                        <div class="mt-4 space-y-3" id="blog-posts-list">
-                            <p class="text-sm text-slate-500">Loading latest posts...</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-sm text-center">
+                            <div class="card-link py-2.5 rounded-lg">
+                                <p class="font-semibold text-slate-700" id="mastodon-users">--</p>
+                                <p class="text-slate-500">Users</p>
+                            </div>
+                            <div class="card-link py-2.5 rounded-lg">
+                                <p class="font-semibold text-slate-700" id="mastodon-posts">--</p>
+                                <p class="text-slate-500">Posts</p>
+                            </div>
+                            <div class="card-link py-2.5 rounded-lg">
+                                <p class="font-semibold text-slate-700" id="mastodon-active">--</p>
+                                <p class="text-slate-500">Active/Month</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 7ED Card -->
-                <div class="light-card p-6 flex flex-col justify-between h-64">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-three-dots mr-3"></i>7ED</h2>
-                        <p class="mt-2 text-sm text-slate-500">More services provided by the webmaster.</p>
+                    <!-- 天气 卡片 (炫酷版) -->
+                    <div id="weather-card" class="light-card weather-card-base relative overflow-hidden p-6 flex flex-col justify-between h-64 transition-all duration-500">
+                        <div class="relative z-10 flex justify-between items-start">
+                            <div>
+                                <h2 class="text-xl font-bold text-white" id="weather-city">Loading...</h2>
+                                <p class="text-white/80" id="weather-desc"></p>
+                            </div>
+                            <div id="weather-icon" class="text-5xl text-white/80">
+                                <i class="bi bi-cloud-sun"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10 text-right">
+                            <h1 class="text-6xl font-bold text-white" id="weather-temp">--°</h1>
+                            <p class="text-white/80" id="weather-range"></p>
+                        </div>
                     </div>
-                    <a href="https://7ed.net" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
-                        7ed.net <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
-                    </a>
+
+                    <!-- JPG 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-image-fill mr-3 text-green-500"></i>JPG</h2>
+                            <p class="mt-2 text-sm text-slate-500">A high-performance image hosting service.</p>
+                        </div>
+                        <a href="https://jpg.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
+                            jpg.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Bing Pictures 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-end h-64 sm:col-span-2 bg-cover bg-center" id="bing-card">
+                        <div class="text-white text-right font-semibold text-sm" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+                            Bing Daily Picture
+                            <a href="https://www.7ed.net/get-api/bing.html" target="_blank" class="p-2 text-white hover:text-gray-200"><i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- PDF 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-pdf-fill mr-3 text-red-500"></i>PDF</h2>
+                            <p class="mt-2 text-sm text-slate-500">A suite of powerful PDF online tools.</p>
+                        </div>
+                        <a href="https://pdf.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
+                            pdf.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Git 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-git mr-3 text-orange-500"></i>Git</h2>
+                            <p class="mt-2 text-sm text-slate-500">Private and secure Git hosting.</p>
+                        </div>
+                        <a href="https://git.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
+                            git.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Check 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-shield-fill-check mr-3 text-teal-500"></i>Check</h2>
+                            <p class="mt-2 text-sm text-slate-500">A website health check service.</p>
+                        </div>
+                        <a href="https://check.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
+                            check.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Memos 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-bookmark-fill mr-3 text-indigo-500"></i>Memos</h2>
+                            <p class="mt-2 text-sm text-slate-500">A lightweight notes website.</p>
+                        </div>
+                        <a href="https://memos.im.sb" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
+                            memos.im.sb <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- 毒鸡汤 卡片 (炫酷版) -->
+                    <div id="soup-card" class="light-card soup-card-base relative overflow-hidden p-6 flex flex-col justify-center items-center h-64 sm:col-span-2 transition-all duration-500 text-center">
+                        <p class="relative z-10 text-lg font-medium text-white/90 italic" id="badsoup">Loading...</p>
+                        <button id="refresh-soup" class="absolute z-20 bottom-4 right-4 text-white/50 hover:text-white transition-colors" aria-label="Refresh quote">
+                            <i class="bi bi-arrow-repeat text-xl"></i>
+                        </button>
+                        <a href="https://www.7ed.net/get-api/soup.html" target="_blank" class="absolute z-20 top-4 right-4 text-white/50 hover:text-white transition-colors text-xs" aria-label="API Source">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Blog 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64 sm:col-span-2 border-sky-500/50">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-file-person-fill mr-3 text-sky-500"></i>Latest From Blog</h2>
+                                <a href="https://yjk.im.sb" target="_blank" class="text-sm text-sky-600 hover:text-sky-800 font-medium">Visit Blog <i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                            <div class="mt-4 space-y-3" id="blog-posts-list">
+                                <p class="text-sm text-slate-500">Loading latest posts...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7ED 卡片 -->
+                    <div class="light-card p-6 flex flex-col justify-between h-64">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800 flex items-center"><i class="bi bi-three-dots mr-3 text-slate-500"></i>7ED</h2>
+                            <p class="mt-2 text-sm text-slate-500">More services provided by the webmaster.</p>
+                        </div>
+                        <a href="https://7ed.net" target="_blank" class="card-link mt-4 block w-full text-center py-2.5 rounded-lg">
+                            7ed.net <i class="bi bi-box-arrow-up-right text-xs ml-1"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </main>
-
-        <!-- Copyright -->
-        <footer class="mt-16 text-center text-sm text-slate-400">
-            <p>&copy; <span id="year"></span> im.sb. Built with <i class="bi bi-heart-fill text-red-500/80"></i></p>
-        </footer>
-
+            </main>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // Set current year
+            // 设置年份
             const setYear = () => {
                 const yearElement = document.getElementById('year');
                 if (yearElement) {
@@ -985,35 +915,7 @@
                 }
             };
 
-            // Handle search form submission
-            const handleSearch = () => {
-                const searchForm = document.getElementById('search-form');
-                if (searchForm) {
-                    searchForm.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                        const engine = document.getElementById('search-engine').value;
-                        const query = document.getElementById('search-input').value;
-                        if (!query) return;
-
-                        let url;
-                        switch (engine) {
-                            case 'bing':
-                                url = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
-                                break;
-                            case 'duckduckgo':
-                                url = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
-                                break;
-                            case 'google':
-                            default:
-                                url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-                                break;
-                        }
-                        window.open(url, '_blank');
-                    });
-                }
-            };
-
-            // Fetch Mastodon info
+            // 获取 Mastodon 信息
             const fetchMastodonInfo = async () => {
                 const statusEl = document.getElementById('mastodon-status');
                 const descEl = document.getElementById('mastodon-desc');
@@ -1051,7 +953,7 @@
                 }
             };
 
-            // Fetch weather info
+            // 获取天气信息
             const fetchWeather = async () => {
                 const weatherCard = document.getElementById('weather-card');
                 const cityEl = document.getElementById('weather-city');
@@ -1103,7 +1005,7 @@
                 }
             };
 
-            // Fetch poisonous chicken soup quote
+            // 获取毒鸡汤
             const fetchBadSoup = async () => {
                 const badsoupElement = document.getElementById('badsoup');
                 if (!badsoupElement) return;
@@ -1122,16 +1024,16 @@
                 }
             };
 
-            // Fetch blog posts
+            // 获取博客文章
             const fetchBlogPosts = async () => {
                 const listEl = document.getElementById('blog-posts-list');
                 if (!listEl) return;
-                // Using a CORS proxy to avoid cross-origin issues
+                // 使用CORS代理来避免跨域问题
                 const rssUrl = 'https://yxlog.com/rss/';
                 const currentDate = new Date();
                 const day = String(currentDate.getDate()).padStart(2, '0');
-                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-                const year = String(currentDate.getFullYear()).slice(-2);
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // 月份从 0 开始
+                const year = String(currentDate.getFullYear()).slice(-2); // 获取年份的后两位
                 const formattedDate = `${year}${month}${day}`;
                 const proxyUrl = `https://use.sevencdn.com/origins/raw?url=${encodeURIComponent(rssUrl)}&date=${formattedDate}`;
 
@@ -1144,7 +1046,7 @@
                     
                     let html = '';
                     items.forEach((item, index) => {
-                        if (index >= 3) return; // Show only the 3 latest posts
+                        if (index >= 3) return; // 只显示最新的三篇
                         const title = item.querySelector("title").textContent;
                         const link = item.querySelector("link").textContent;
                         html += `
@@ -1160,7 +1062,7 @@
                 }
             };
 
-            // Set Bing daily picture background
+            // 设置Bing每日图片背景
             const setBingBackground = () => {
                 const bingCard = document.getElementById('bing-card');
                 if (bingCard) {
@@ -1168,16 +1070,15 @@
                 }
             };
 
-            // Initialize all functions
+            // 初始化所有功能
             setYear();
-            handleSearch();
             fetchMastodonInfo();
             fetchWeather();
             fetchBadSoup();
             fetchBlogPosts();
             setBingBackground();
 
-            // Add event listener for the soup refresh button
+            // 为毒鸡汤刷新按钮添加事件监听器
             const refreshSoupBtn = document.getElementById('refresh-soup');
             if (refreshSoupBtn) {
                 refreshSoupBtn.addEventListener('click', fetchBadSoup);
