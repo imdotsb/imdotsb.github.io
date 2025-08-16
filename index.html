@@ -1452,7 +1452,7 @@
                     }
                 };
 
-                // Fetch weather info (Rewritten Function)
+                // Fetch weather info
                 const fetchWeather = async () => {
                     const weatherCard = document.getElementById("weather-card");
                     const cityEl = document.getElementById("weather-city");
@@ -1494,7 +1494,8 @@
                         return "default";
                     };
 
-                    const apiUrl = "https://api.vvhan.com/api/weather";
+                    // The new API endpoint
+                    const apiUrl = "https://use.sevencdn.com/api/weather";
 
                     try {
                         const response = await fetch(apiUrl);
@@ -1505,24 +1506,26 @@
                         }
                         const data = await response.json();
 
-                        if (!data || !data.success || !data.data) {
-                            throw new Error(
-                                "API returned unsuccessful or invalid data",
-                            );
+                        if (!data || !data.city) {
+                            throw new Error("API returned invalid data");
                         }
 
+                        // Update DOM elements with data from the new API structure
                         cityEl.textContent = data.city;
-                        descEl.textContent = data.data.type;
-                        tempEl.innerHTML = `${data.data.high.replace("°C", "")}°`;
-                        rangeEl.textContent = `${data.data.low} ~ ${data.data.high}`;
+                        descEl.textContent = data.current_condition;
+                        tempEl.innerHTML = `${Math.round(data.current_temp_c)}°`;
+                        rangeEl.textContent = `${data.today_min_temp_c}° ~ ${data.today_max_temp_c}°`;
 
-                        const themeKey = getWeatherThemeKey(data.data.type);
+                        // The theme logic remains the same, but uses the new data field
+                        const themeKey = getWeatherThemeKey(
+                            data.current_condition,
+                        );
 
                         const iconClass =
                             weatherIcons[themeKey] || weatherIcons["default"];
                         iconEl.innerHTML = `<i class="bi ${iconClass}"></i>`;
 
-                        // Reset background classes
+                        // Reset background classes before adding the new one
                         weatherCard.classList.remove(
                             "weather-card-base",
                             ...Object.values(weatherBgs),
@@ -1626,10 +1629,10 @@
                 setYear();
                 handleSearch();
                 fetchMastodonInfo();
-                fetchWeather();
                 fetchBadSoup();
-                fetchBlogPosts();
                 setBingBackground();
+                fetchWeather();
+                fetchBlogPosts();
 
                 // Add event listener for the soup refresh button
                 const refreshSoupBtn = document.getElementById("refresh-soup");
