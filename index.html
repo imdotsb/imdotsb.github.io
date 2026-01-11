@@ -3,20 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://use.sevencdn.com" />
         <title>im.sb - Projects</title>
         <link rel="icon" href="/favicon.ico" />
 
         <!-- Google Fonts: Inter -->
         <link
-            href="https://use.sevencdn.com/css2?family=Inter:wght@300;400;500;600;700"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700"
             rel="stylesheet"
         />
 
         <!-- Bootstrap Icons -->
         <link
             rel="stylesheet"
-            href="https://use.sevencdn.com/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            href="https://01kepns448f75cfkzprakm2sqz.esa.staticdn.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
 
         <style>
@@ -1579,7 +1578,7 @@
                     badsoupElement.style.opacity = "0.5";
                     try {
                         const response = await fetch(
-                            "https://use.sevencdn.com/api/soup",
+                            "https://www.7ed.net/soup/api",
                         );
                         const data = await response.json();
                         if (data.badsoup) {
@@ -1595,59 +1594,51 @@
                 };
 
                 // Fetch blog posts
-                const fetchBlogPosts = async () => {
-                    const listEl = document.getElementById("blog-posts-list");
-                    if (!listEl) return;
-                    // Using a CORS proxy to avoid cross-origin issues
-                    const rssUrl = "https://yxlog.com/rss/";
-                    const currentDate = new Date();
-                    const day = String(currentDate.getDate()).padStart(2, "0");
-                    const month = String(currentDate.getMonth() + 1).padStart(
-                        2,
-                        "0",
-                    );
-                    const year = String(currentDate.getFullYear()).slice(-2);
-                    const formattedDate = `${year}${month}${day}`;
-                    const proxyUrl = `https://use.sevencdn.com/origins/raw?url=${encodeURIComponent(rssUrl)}&date=${formattedDate}`;
+const fetchBlogPosts = async () => {
+    const listEl = document.getElementById("blog-posts-list");
+    if (!listEl) return;
+    
+    // Direct RSS URL
+    const rssUrl = "https://yxlog.com/feed.xml";
 
-                    try {
-                        const response = await fetch(proxyUrl);
-                        if (!response.ok)
-                            throw new Error("Failed to fetch RSS feed");
-                        const str = await response.text();
-                        const data = new window.DOMParser().parseFromString(
-                            str,
-                            "text/xml",
-                        );
-                        const items = data.querySelectorAll("item");
+    try {
+        const response = await fetch(rssUrl);
+        if (!response.ok)
+            throw new Error("Failed to fetch RSS feed");
+        const str = await response.text();
+        const data = new window.DOMParser().parseFromString(
+            str,
+            "text/xml",
+        );
+        const items = data.querySelectorAll("item");
 
-                        let html = "";
-                        items.forEach((item, index) => {
-                            if (index >= 3) return; // Show only the 3 latest posts
-                            const title =
-                                item.querySelector("title").textContent;
-                            const link = item.querySelector("link").textContent;
-                            html += `
-                            <a href="${link}" target="_blank" rel="noopener noreferrer" class="block p-3 rounded-lg hover:bg-slate-100 transition-colors">
-                                <p class="font-medium text-slate-700 truncate">${title}</p>
-                            </a>
-                        `;
-                        });
-                        listEl.innerHTML =
-                            html ||
-                            '<p class="text-sm text-slate-500">No posts found.</p>';
-                    } catch (error) {
-                        console.error("Failed to fetch blog posts:", error);
-                        listEl.innerHTML =
-                            '<p class="text-sm text-slate-500">Could not load posts.</p>';
-                    }
-                };
+        let html = "";
+        items.forEach((item, index) => {
+            if (index >= 3) return; // Show only the 3 latest posts
+            const title =
+                item.querySelector("title").textContent;
+            const link = item.querySelector("link").textContent;
+            html += `
+            <a href="${link}" target="_blank" rel="noopener noreferrer" class="block p-3 rounded-lg hover:bg-slate-100 transition-colors">
+                <p class="font-medium text-slate-700 truncate">${title}</p>
+            </a>
+        `;
+        });
+        listEl.innerHTML =
+            html ||
+            '<p class="text-sm text-slate-500">No posts found.</p>';
+    } catch (error) {
+        console.error("Failed to fetch blog posts:", error);
+        listEl.innerHTML =
+            '<p class="text-sm text-slate-500">Could not load posts.</p>';
+    }
+};
 
                 // Set Bing daily picture background
                 const setBingBackground = () => {
                     const bingCard = document.getElementById("bing-card");
                     if (bingCard) {
-                        bingCard.style.backgroundImage = `url('https://use.sevencdn.com/api/bing?size=800x600&rand=${Math.random()}')`;
+                        bingCard.style.backgroundImage = `url('https://www.7ed.net/bing/api?size=800x600&rand=${Math.random()}')`;
                     }
                 };
 
